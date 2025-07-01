@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RSVP - Zendaya & Tom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="second-page d-flex align-items-center justify-content-center">
+  <div class="text-center input-container">
+    <h2 class="enter-name-heading mb-4">Please enter your full name</h2>
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
+      <input type="text" id="guestName" class="name-input me-md-3 mb-3 mb-md-0" placeholder="Your Full Name" />
+      <small id="nameWarning" class="text-danger d-block mt-2" style="display: none;"></small>
+
+<button id="nextBtn" class="btn go-next-button d-flex align-items-center justify-content-center" disabled>
+  <span id="nextBtnText">Next</span>
+  <div id="nextBtnSpinner" class="spinner-border spinner-border-sm ms-2" role="status" style="display: none;"></div>
+</button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>

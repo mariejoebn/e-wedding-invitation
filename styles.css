@@ -1,0 +1,683 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.first-page {
+  background: url('assets/images/background1.jpg') no-repeat center center;
+background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  height: 100vh;
+  color: black;
+  flex-direction: column;
+}
+
+.second-page {
+  background: url('assets/images/background2.jpg') no-repeat center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  height: 100vh;
+  color: black;
+  flex-direction: column;
+}
+
+.couple-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: black;
+}
+
+.wedding-date {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: black;
+}
+
+
+.enter-name-heading {
+  font-family: 'Great Vibes', serif;
+  font-size: 2.5rem;
+  color: black;
+  background: none;       /* no background */
+  box-shadow: none;       /* no shadow */
+  padding: 0;
+  margin-bottom: 1.5rem;  /* space below heading */
+  font-weight: 500;
+  user-select: none;
+}
+
+.name-input {
+  padding: 10px 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  outline: none;
+  width: 250px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.name-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+   font-style: italic;
+}
+
+.go-next-button {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  background-color: #556b2f;
+  color: white;
+  border: none;
+}
+.arrow-button {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-button:hover,
+.arrow-button:focus {
+  background-color: rgba(85, 107, 47, 0.2); /* light olive green fade */
+  outline: none;
+}
+#nextBtn:disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+#nextBtn .spinner-border {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.8); /* faded white, almost transparent */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px); /* subtle glass effect */
+  z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+}
+
+/* Navigation buttons */
+.nav-buttons .nav-btn {
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #556b2f; /* olive green */
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-buttons .nav-btn:hover,
+.nav-buttons .nav-btn:focus {
+  background-color: #6b8e23; /* lighter olive green */
+  outline: none;
+}
+
+/* Page Content styling */
+main {
+  font-family: 'Playfair Display', serif;
+  color: black;
+  max-width: 650px;
+}
+
+/* Full page background for page 3 */
+body.page-with-header {
+  margin: 0;
+  padding-top: 60px; /* for sticky header */
+  height: 100vh;
+  position: relative;
+  background: url('assets/images/background3.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* Sticky header styles as before */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+.logo img {
+  height: 100px; /* increased from 40px */
+}
+.sticky-footer {
+  background-color: rgba(85, 107, 47, 0.15); /* faded olive green */
+  font-size: 0.9rem;
+  color: #333;
+  border-top: 1px solid #ccc;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding-top: 0.5rem;
+}
+
+.sticky-footer a {
+  color: #556b2f;
+  font-weight: 500;
+}
+
+.sticky-footer a:hover {
+  color: #6b8e23;
+  text-decoration: underline;
+}
+
+.social-icons img {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.social-icons .account-name {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-info a {
+  color: #556b2f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #6b8e23;
+  text-decoration: underline;
+}
+
+body.page-with-header {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.floating-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.floating-flowers span img {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+
+.floating-flowers span {
+  position: absolute;
+  bottom: -50px; 
+  animation: floatUp 12s linear infinite;
+  display: block;
+  width: 40px;  
+  height: 40px;
+}
+
+.floating-flowers span img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.1)); 
+}
+
+
+.floating-flowers span:nth-child(1) { left: 5%; animation-delay: 0s; }
+.floating-flowers span:nth-child(2) { left: 15%; animation-delay: 2s; }
+.floating-flowers span:nth-child(3) { left: 25%; animation-delay: 4s; }
+.floating-flowers span:nth-child(4) { left: 35%; animation-delay: 1s; }
+.floating-flowers span:nth-child(5) { left: 50%; animation-delay: 3s; }
+.floating-flowers span:nth-child(6) { left: 65%; animation-delay: 5s; }
+.floating-flowers span:nth-child(7) { left: 75%; animation-delay: 2s; }
+.floating-flowers span:nth-child(8) { left: 85%; animation-delay: 6s; }
+.floating-flowers span:nth-child(9) { left: 95%; animation-delay: 4s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+/* Content centered horizontally and vertically */
+.floating-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
+
+main.content-center {
+  position: relative;
+  z-index: 10;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  color: black;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.main-quote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.scripture {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #6e6e6e;
+}
+
+.invitation-text {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #444444;
+  margin-top: 1.5rem;
+}
+/* === PAGE 4 - Date Page Centered Content Fix === */
+/* Global scroll settings */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  overflow-y: auto;  /* ✅ Scrollbar will show */
+  overflow-x: hidden;
+}
+
+/* Fix for pages with sticky header */
+body.page-with-header,
+body.page-date,
+body.page-location,
+body.page-rsvp {
+  padding-top: 100px; /* Account for sticky header */
+  min-height: 100vh;
+  overflow-y: auto;  /* ✅ Allows scroll */
+}
+/* Optional: Elegant scrollbar (WebKit) */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #f0f4db;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #556b2f;
+  border-radius: 10px;
+}
+
+body.page-date {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px; /* space for sticky header */
+  background: url('assets/images/background4.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+main.page-date-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Calendar Box */
+.calendar-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 220px;
+}
+
+.calendar-box h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.calendar-box .display-4 {
+  font-size: 3.5rem;
+  line-height: 1;  
+}
+
+.calendar-box div {
+  font-size: 1.1rem;
+    align-items: center;
+  text-align: center;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: right;
+    align-items: right;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.countdown span {
+  background: rgba(85, 107, 47, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Weather Box 
+.weather-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  max-width: 300px;
+  width: 100%;
+}
+/* === PAGE 5 - Location === */
+.weather-widget {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #556b2f;
+  border-radius: 16px;
+  max-width: 300px;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  margin-top: 20px;
+}
+
+.weather-widget h4 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #556b2f;
+  margin-bottom: 10px;
+}
+
+.weather-widget .day-forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.weather-widget img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+body.page-location {
+  background: url('assets/images/background3.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px; /* space for sticky header */
+}
+
+.page-location-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.page-location-main h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+/* Elegant hover effect on the map image */
+/* Elegant hover effect with animated olive border */
+.location-map-link {
+  display: inline-block;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.location-map-link img {
+  width: 100%;
+  border: 3px solid #556b2f;
+  border-radius: 12px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover Effects */
+.location-map-link:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.location-map-link:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.08) saturate(1.1);
+  border-color: #6b8e23; /* lighter olive on hover */
+}
+
+
+/* Highlight "Location" button */
+.nav-btn.active {
+  background-color: #6b8e23 !important;
+  border: 2px solid white;
+}
+.tap-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.tap-icon {
+  width: 24px;
+  height: 24px;
+}
+/* Shared centering logic */
+.page-date-main,
+.page-location-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.rsvp-header {
+  font-family: 'Georgia', serif;
+  font-size: 3rem;
+  color: #556b2f; /* dark olive */
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(85, 107, 47, 0.4);
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+/* RSVP Form Container */
+form#rsvpForm {
+  background: #f0f4db; /* soft pale */
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(85, 107, 47, 0.15);
+  max-width: 480px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+/* Form Text */
+form#rsvpForm p {
+  font-family: 'Georgia', serif;
+  font-size: 1.7rem;
+  color: #556b2f;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Radio Buttons */
+form#rsvpForm label {
+  font-size: 1.2rem;
+  color: #4a5a18;
+  margin-right: 2rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+}
+
+form#rsvpForm input[type="radio"] {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+/* Guest Count Input */
+#guestCountGroup {
+  margin-top: 1.5rem;
+}
+
+#guestCount {
+  width: 140px;
+  padding: 0.7rem;
+  border-radius: 12px;
+  border: 1.5px solid #6b8e23;
+  background-color: #e7f0c3;
+  color: #475921;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  font-weight: 600;
+  box-shadow: inset 0 2px 6px rgba(85, 107, 47, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+#guestCount:focus {
+  border-color: #556b2f;
+  outline: none;
+  box-shadow: 0 0 8px 2px rgba(85, 107, 47, 0.4);
+}
+
+
+.btn-success {
+  background-color: #556b2f;
+  border: none;
+  font-family: 'Playfair Display', serif;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #6b8e23;
+}
+
+#rsvpMessage {
+  margin-top: 2.5rem;
+  font-family: 'Georgia', serif;
+  color: #3e4a1e;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  min-height: 50px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .rsvp-header {
+    font-size: 2.2rem;
+  }
+
+  form#rsvpForm {
+    padding: 2rem 1.5rem;
+    max-width: 90%;
+  }
+
+  #guestCount {
+    width: 100px;
+  }
+
+  .nav-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+}
+body {
+  opacity: 1;
+  transition: opacity 1s ease;
+}

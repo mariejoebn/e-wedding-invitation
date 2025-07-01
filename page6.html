@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RSVP – Zendaya & Tom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-with-header page-rsvp d-flex flex-column min-vh-100">
+
+  <!-- Sticky Header -->
+  <header class="sticky-header d-flex align-items-center px-4">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Wedding Logo" height="100" />
+    </div>
+    <nav class="nav-buttons ms-auto d-flex gap-3">
+      <button class="btn btn-success nav-btn" data-page="home">Home</button>
+      <button class="btn btn-success nav-btn" data-page="date">Date</button>
+      <button class="btn btn-success nav-btn" data-page="location">Location</button>
+      <button class="btn btn-success nav-btn">RSVP</button>
+    </nav>
+  </header>
+
+  <!-- Floating Roses -->
+  <div class="floating-flowers">
+    <span><img src="assets/images/rose1.jpg" alt="rose" /></span>
+    <span><img src="assets/images/rose1.jpg" alt="rose" /></span>
+    <span><img src="assets/images/rose1.jpg" alt="rose" /></span>
+    <span><img src="assets/images/rose1.jpg" alt="rose" /></span>
+    <span><img src="assets/images/rose1.jpg" alt="rose" /></span>
+    <span><img src="assets/images/rose1.jpg" alt="rose" /></span>
+  </div>
+
+  <!-- RSVP Content -->
+  <main class="container text-center mt-5">
+    <h2 class="rsvp-header text-center mb-4">RSVP Confirmation</h2>
+    <form id="rsvpForm">
+      <p class="mb-3">Will you attend our wedding?</p>
+      <div class="mb-4">
+        <label>
+          <input type="radio" name="attendance" value="yes" required /> Yes
+        </label>
+        <label class="ms-4">
+          <input type="radio" name="attendance" value="no" required /> No
+        </label>
+      </div>
+
+      <div id="guestCountGroup" class="mb-3" style="display: none;">
+        <label for="guestCount">How many guests (including you)?</label>
+        <input type="number" id="guestCount" min="1" max="10" class="form-control text-center mx-auto" style="width: 150px;" />
+      </div>
+
+<button type="submit" class="btn btn-success nav-btn px-4">Submit</button>
+    </form>
+
+    <div id="rsvpMessage" class="mt-4 fs-5 fw-bold"></div>
+     <button id="closeInvitationBtn" class="btn btn-success rounded-pill mt-4 px-4 py-2">
+  Close the Invitation
+</button>
+  </main>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+ 
+
+
+  <!-- RSVP Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('rsvpForm');
+      const guestCountGroup = document.getElementById('guestCountGroup');
+      const guestCountInput = document.getElementById('guestCount');
+      const rsvpMessage = document.getElementById('rsvpMessage');
+      const radios = document.querySelectorAll('input[name="attendance"]');
+      const guestName = localStorage.getItem('guestName') || 'Guest';
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          if (e.target.value === 'yes') {
+            guestCountGroup.style.display = 'block';
+          } else {
+            guestCountGroup.style.display = 'none';
+          }
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const attendance = form.elements['attendance'].value;
+
+        if (attendance === 'yes') {
+          const guests = guestCountInput.value || 1;
+          rsvpMessage.innerHTML = `Thank you, <strong>${guestName}</strong>! We’re excited to see you and your ${guests - 1} guest(s)!`;
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#4CAF50']
+          });
+        } else {
+          rsvpMessage.innerHTML = `We'll miss you, <strong>${guestName}</strong>! Thanks for letting us know.`;
+        }
+      });
+    });
+   
+  document.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.getElementById('closeInvitationBtn');
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        // Fade the entire body
+        document.body.style.transition = 'opacity 1s ease';
+        document.body.style.opacity = '0';
+
+        // Redirect after fade
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1000);
+      });
+    }
+  });
+
+
+  </script>
+  <footer class="sticky-footer text-center mt-auto py-3">
+  <div class="container">
+    <p class="mb-2">Follow us on social media:</p>
+    <div class="social-icons d-flex justify-content-center align-items-center gap-4 mb-2 flex-wrap">
+      <a href="https://instagram.com/zendaya" target="_blank" class="d-flex align-items-center text-decoration-none">
+        <img src="assets/images/instagram.png" alt="Zendaya IG" class="me-2" />
+        <span class="account-name">Zendaya</span>
+      </a>
+      <a href="https://instagram.com/tomholland2013" target="_blank" class="d-flex align-items-center text-decoration-none">
+        <img src="assets/images/instagram.png" alt="Tom IG" class="me-2" />
+        <span class="account-name">Tom Holland</span>
+      </a>
+    </div>
+    <p class="contact-info">
+      For inquiries: 
+      <a href="mailto:info@zendaya-tomwedding.com">info@zendaya-tomwedding.com</a>
+    </p>
+  </div>
+</footer>
+
+
+  <!-- Your global JS -->
+  <script src="script.js"></script>
+</body>
+</html>
